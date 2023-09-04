@@ -46,15 +46,3 @@ form.custom-search-form {
 .open {
     left: 100%;
 }
-.fundo{
-    margin: 0;
-    width: 780px;
-    height: 880px;
-    position: absolute;
-    top: 1%;
-    left: 30%;
-    background-color: rgb(227, 229, 231);
-    z-index: -1;
-    opacity: 0.5;
-    border-radius: 10px;
-}
