@@ -33,16 +33,26 @@ form.custom-search-form {
 }
 
 .tab-lateral {
+   
     position: fixed;
-    left: calc(100% - 300px);
+    left: calc(100% - 200px);
     height: 100%;
-    width: 300px;
+    width: 200px;
     color: white;
     background-color: black;
     transition: left, ease 2s;
    
 
 }
+
+
+.tab-lateral ul {
+    position: absolute;
+    left: 20px;
+    top: 90px;
+}
+
+
 .open {
     left: 100%;
 }
@@ -57,4 +67,9 @@ form.custom-search-form {
     z-index: -1;
     opacity: 0.5;
     border-radius: 10px;
+}
+#barra{
+    position: fixed;
+    right: 20px;
+    top: 20px;
 }
