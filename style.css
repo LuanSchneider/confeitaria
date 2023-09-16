@@ -13,6 +13,7 @@ form.custom-search-form {
   left: 4px;
   padding: 10px;
   border-radius: 5px;
+  
 }
 
 .custom-search-button {
@@ -27,7 +28,7 @@ form.custom-search-form {
 }
 
 .custom-search-button:hover {
-  background-color: #ff1493;
+  background-color: #2c101f;
   /* Cor rosa mais escura quando hover */
 }
 
@@ -39,12 +40,12 @@ form.custom-search-form {
 
 .tab-lateral {
   position: fixed;
-  left: calc(100% - 200px);
-  height: 100%;
+  left: calc(100% - 130px);
+  height: 33%;
   width: 200px;
   color: white;
-  background-color: black;
-  transition: left, ease 2s;
+  background-color: rgb(241, 231, 238)
+
 }
 
 .tab-lateral ul {
@@ -63,7 +64,7 @@ form.custom-search-form {
   height: 880px;
   position: absolute;
   top: 1%;
-  left: 30%;
+  left: 25%;
   background-color: rgb(227, 229, 231);
   z-index: -1;
   opacity: 0.5;
@@ -72,6 +73,48 @@ form.custom-search-form {
 
 #barra {
   position: fixed;
-  right: 20px;
+  right: 2px;
   top: 20px;
+}
+.logo{
+  background-color: #ff69b4;
+  position: absolute;
+  left: 42.5%;
+  top: -6px;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+
+
+}
+button{
+  background-color: #ff69b4;
+  /* Cor rosa */
+  right: 4px;
+  color: #fff;
+  /* Cor do texto branco para contraste */
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+}
+#menu ul{
+  background-color: #ff69b4;
+  /* Cor rosa */
+  list-style: none;
+  right: 4px;
+  color: #fff;
+  /* Cor do texto branco para contraste */
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+}
+
+
+
+#menu ul li a{
+  padding: 5px 10px;
+  display: inline-block;
+  color: white;
+  text-decoration:none ;
 }
