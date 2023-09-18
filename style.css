@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: rgb(209, 117, 145);
+  background-color: rgb(206, 157, 172);
 }
 
 form.custom-search-form {
@@ -64,7 +64,7 @@ form.custom-search-form {
   height: 880px;
   position: absolute;
   top: 1%;
-  left: 25%;
+  left: 30%;
   background-color: rgb(227, 229, 231);
   z-index: -1;
   opacity: 0.5;
@@ -117,4 +117,16 @@ button{
   display: inline-block;
   color: white;
   text-decoration:none ;
+}
+
+
+.paga{
+  background-color: #ff69b4;
+  position: absolute;
+  left: 96.5%;
+  top: 245px;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
 }
