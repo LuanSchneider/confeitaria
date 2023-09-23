@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.CustomBrowser": "microsoft-edge",
+    "liveServer.settings.CustomBrowser": "chrome",
+   
+
 }
