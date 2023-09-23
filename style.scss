@@ -152,19 +152,27 @@ header {
 }
 
 main {
+  background: white;
+  padding: 30px;
 
 
   .page-ttle {
-    font-size: 40px;
-    padding: 50px, 0;
+    font-size: 3S00px;
+    padding: 50px 0;
     text-align: center;
   }
 
   .content {
     display: flex;
+  
+
+  section {
+    flex: 1;
   }
 
-  section {}
-
-  aside {}
+  aside {
+background: #ec5598;
+min-width: 250px;
+  }
+}
 }
