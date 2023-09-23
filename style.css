@@ -130,3 +130,10 @@ button{
   padding: 10px 12px;
   border-radius: 5px;
 }
+.top-info-bar {
+  display: block;
+  width: 100%;
+  z-index: 100;
+  background-color: #ec5598;
+  height: 45px;
+}
