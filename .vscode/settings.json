@@ -1,6 +1,6 @@
 {
     "liveServer.settings.CustomBrowser": "microsoft-edge",
-    "liveSassCompile.settings.showOutputWindowOn": "Information",
+    "liveSassCompile.settings.showOutputWindowOn": "Error",
    
 
 }
