@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionei um link para o arquivo CSS compilado -->
     <link rel="stylesheet" href="style.css">
 
     <title>Document</title>
@@ -11,37 +12,89 @@
 </head>
 
 <body>
+    <!-- Usei a tag header para o cabeçalho da página -->
+    <header>
+        <h1>Cabeça</h1>
+        <!-- Usei a tag nav para a navegação da página -->
+        <nav>
+            <ul>
+                <!-- Usei a tag li para os itens da lista -->
+                <li><a href="#">Comprar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Usei a tag main para o conteúdo principal da página -->
+    <main>
+        <!-- Usei a tag div para agrupar os elementos da página -->
+        <div class="page-title">
+            <h2>Seu carrinho</h2>
+            <!-- Usei a tag section para a seção da tabela -->
+            <section>
+                <!-- Usei a tag table para a tabela dos produtos -->
+                <table>
+                    <!-- Usei a tag thead para o cabeçalho da tabela -->
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>--</th>
+                        </tr>
+                    </thead>
+                    <!-- Usei a tag tbody para o corpo da tabela -->
+                    <tbody>
+                        <!-- Usei a tag tr para as linhas da tabela -->
+                        <tr>
+                            <!-- Usei a tag td para as células da tabela -->
+                            <td>bolo de chocolate</td>
+                            <td>R$ 120</td>
+                            <!-- Substituí as células de quantidade por um elemento select -->
+                            <td>
+                              <select id="quantidade-select">
+                                <!-- Adicionei as opções de 1 a 30 -->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <!-- ... -->
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                              </select>
+                            </td>                            
+                            <!-- Adicionei uma célula vazia para o total do produto -->
+                            <td></td>                            
+                            <!-- Adicionei um botão de remover o produto -->
+                            <td><button id="remover">Remover</button></td>                            
+                        </tr>                        
+                    </tbody>                    
+                </table>                
+            </section>            
+            <!-- Usei a tag aside para o resumo da compra -->
+            <aside>                
+                <h3>Resumo de sua compra</h3>                
+                <!-- Usei uma lista não ordenada para os itens do resumo -->
+                <ul>                    
+                    <!-- Adicionei um item vazio para o subtotal da compra -->
+                    <li id="subtotal"></li>                    
+                    <!-- Adicionei um item fixo para o frete da compra -->
+                    <li id="frete">Frete: R$ 20</li>                    
+                    <!-- Adicionei um item vazio para o total da compra -->
+                    <li id="total"></li>                    
+                </ul>                
+                <!-- Usei um botão para finalizar a compra -->
+                <button id="finalizar-compra">Finalizar compra</button>
+                <!-- Adicionei um elemento input do tipo number para o botão de seleção -->
+                <input id="quantidade-input" type="number" min="1" max="30" value="1">
+                <!-- Adicionei um botão para adicionar o produto ao carrinho -->
+                <button id="adicionar-produto">Adicionar ao carrinho</button>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Coloquei o script no final do body para melhorar o desempenho -->
     <script src="loja.js"></script>
+
 </body>
-<header>cabeca</header>
-<span>comprar</span>
-<main>
-    <div class="page title">
-        seu carrinho
-        <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>produto</th>
-                        <th>preço</th>
-                        <th>quantidade </th>
-                        <th>total</th>
-                        <th>--</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-                <td></td>
-                <td>R$ 120</td>
-                <td></td>
-                <td>R$240</td>
-                <td></td>
-            </table>
-        </section>
-        <aside>resumo de sua compra</aside>
-
-
-
-    </div>
-</main>
-
 </html>

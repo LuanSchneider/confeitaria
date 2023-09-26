@@ -1,75 +1,100 @@
-// Produto
-class Produto {
-    constructor(nome, preco) {
-        this.nome = nome;
-        this.preco = preco;
-    }
+// Crio uma função para o cabeçalho da página
+function cabecalho() {
+  // Seleciono o elemento header do HTML
+  var header = document.querySelector("header");
+  // Faço alguma coisa com o cabeçalho, por exemplo, mudar a cor de fundo
+  header.style.backgroundColor = "blue";
 }
 
-// Carrinho
-class Carrinho {
-    constructor() {
-        this.produtos = [];
-    }
-
-    adicionarProduto(produto) {
-        this.produtos.push(produto);
-    }
-
-    calcularTotal() {
-        let total = 0;
-        for(let produto of this.produtos) {
-            total += produto.preco;
-        }
-        return total;
-    }
+// Crio uma função para a navegação da página
+function navegacao() {
+  // Seleciono o elemento nav do HTML
+  var nav = document.querySelector("nav");
+  // Faço alguma coisa com a navegação, por exemplo, mudar a cor dos links
+  var links = nav.querySelectorAll("a");
+  for (var i = 0; i < links.length; i++) {
+    links[i].style.color = "white";
+  }
 }
 
-// Criando produtos
-let bolo = new Produto("Bolo de Chocolate", 20);
-let torta = new Produto("Torta de Maçã", 15);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" bolo de morango ",45);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" torta de limão ",25);
-let torta2=new Produto(" torta de limão ",25);
+// Crio uma função para o título da página
+function titulo() {
+  // Seleciono o elemento h2 do HTML
+  var h2 = document.querySelector("h2");
+  // Faço alguma coisa com o título, por exemplo, mudar o texto
+  h2.textContent = "Seu carrinho está cheio!";
+}
 
-// Criando carrinho
-let carrinho = new Carrinho();
+// Crio uma função para a tabela dos produtos
+function tabela() {
+  // Seleciono o elemento table do HTML
+  var table = document.querySelector("table");
+  // Faço alguma coisa com a tabela, por exemplo, adicionar um novo produto
+  var tbody = table.querySelector("tbody");
+  var tr = document.createElement("tr");
+  var td1 = document.createElement("td");
+  td1.textContent = "Calça jeans";
+  var td2 = document.createElement("td");
+  td2.textContent = "R$ 80";
+  var td3 = document.createElement("td");
+  td3.textContent = "1";
+  var td4 = document.createElement("td");
+  td4.textContent = "R$ 80";
+  var td5 = document.createElement("td");
+  var button = document.createElement("button");
+  button.textContent = "Remover";
+  td5.appendChild(button);
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+  tr.appendChild(td4);
+  tr.appendChild(td5);
+  tbody.appendChild(tr);
+}
 
-// Adicionando produtos ao carrinho
-carrinho.adicionarProduto(bolo);
-carrinho.adicionarProduto(torta);
+// Crio uma função para o resumo da compra
+function resumo() {
+  // Seleciono o elemento aside do HTML
+  var aside = document.querySelector("aside");
+  // Faço alguma coisa com o resumo, por exemplo, calcular o total
+  var ul = aside.querySelector("ul");
+  var li1 = ul.querySelector("li:nth-child(1)");
+  var li2 = ul.querySelector("li:nth-child(2)");
+  var li3 = ul.querySelector("li:nth-child(3)");
+  var subtotal = parseInt(li1.textContent.split(": ")[1]);
+  var frete = parseInt(li2.textContent.split(": ")[1]);
+  var total = subtotal + frete;
+  li3.textContent = "Total: R$ " + total;
+}
 
-// Calculando o total
-let total = carrinho.calcularTotal();
-console.log(`O total do seu pedido é: R$${total}`);
-// Lista de itens
-let itens = [
-    { nome: 'Item 1', preco: 10, pago: false },
-    { nome: 'Item 2', preco: 20, pago: false },
-    { nome: 'Item 3', preco: 30, pago: false }
-  ];
-  
-  // Função para pagar um item
-  function pagarItem(index) {
-    if (index >= 0 && index < itens.length) {
-      itens[index].pago = true;
-      console.log(`O pagamento do ${itens[index].nome} foi confirmado.`);
-    } else {
-      console.log('Índice inválido');
-    }
-  }
-  
-  // Pagar o segundo item
-  pagarItem(1);
-  
-  // Verificar o status de pagamento dos itens
-  for (let item of itens) {
-    console.log(`${item.nome} - Pago: ${item.pago ? 'Sim' : 'Não'}`);
-  }
-  
+// Crio uma função para o botão de finalizar compra
+function finalizar() {
+    // Seleciono o elemento button do HTML
+    var button = document.querySelector("button");
+    // Faço alguma coisa com o botão, por exemplo, redirecionar para outra página
+    button.addEventListener("click", function() {
+      window.location.href = "https://www.bing.com/";
+    });
+}
+var quantidade = document.getElementById("quantidade-select");
+
+// Select the td element that contains the total of the product
+var total = quantidade.parentElement.parentElement.lastElementChild.previousElementSibling;
+
+// Create a function to update the total of the product
+function atualizarTotal() {
+  // Get the value of the quantity
+  var qtd = parseInt(quantidade.value);
+
+  // Get the unit price of the product
+  var preco = parseInt(quantidade.parentElement.previousElementSibling.textContent.replace('R$ ', ''));
+
+  // Calculate the total of the product
+  var totalProduto = qtd * preco;
+
+  // Update the cell of the total of the product
+  total.textContent = "R$ " + totalProduto;
+}
+
+// Add a change event to the quantity selector
+quantidade.addEventListener("change", atualizarTotal);

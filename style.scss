@@ -1,178 +1,167 @@
-body {
-  margin: 0;
-  background-color: rgb(206, 157, 172);
-}
+// Defini algumas variáveis para as cores
+$cor-primaria: pink;
+$cor-secundaria: white;
+$cor-terciaria: black;
 
-form.custom-search-form {
-  display: fixed;
-}
-
-.custom-search-input {
-  border: 2px solid #ff69b4;
-  /* Cor rosa */
-  left: 4px;
-  padding: 10px;
-  border-radius: 5px;
-
-}
-
-.custom-search-button {
-  background-color: #ff69b4;
-  /* Cor rosa */
-  right: 4px;
-  color: #fff;
-  /* Cor do texto branco para contraste */
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
-
-.custom-search-button:hover {
-  background-color: #2c101f;
-  /* Cor rosa mais escura quando hover */
-}
-
-.divizinha {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.tab-lateral {
-  position: fixed;
-  left: calc(100% - 130px);
-  height: 33%;
-  width: 200px;
-  color: white;
-  background-color: rgb(241, 231, 238)
-}
-
-.tab-lateral ul {
-  position: absolute;
-  left: 20px;
-  top: 90px;
-}
-
-.open {
-  left: 100%;
-}
-
-.fundo {
-  margin: 0;
-  width: 780px;
-  height: 880px;
-  position: absolute;
-  top: 1%;
-  left: 30%;
-  background-color: rgb(227, 229, 231);
-  z-index: -1;
-  opacity: 0.5;
-  border-radius: 10px;
-}
-
-#barra {
-  position: fixed;
-  right: 2px;
-  top: 20px;
-}
-
-.logo {
-  background-color: #ff69b4;
-  position: absolute;
-  left: 44.6%;
-  top: -10px;
-  color: #fff;
-  border: none;
-  padding: 10px 12px;
-  border-radius: 5px;
-
-
-}
-
-button {
-  background-color: #ff69b4;
-  /* Cor rosa */
-  right: 4px;
-  color: #fff;
-  /* Cor do texto branco para contraste */
-  border: none;
-  padding: 10px 12px;
-  border-radius: 5px;
-}
-
-#menu ul {
-  background-color: #ff69b4;
-  /* Cor rosa */
-  list-style: none;
-  right: 4px;
-  color: #fff;
-  /* Cor do texto branco para contraste */
-  border: none;
-  padding: 10px 12px;
-  border-radius: 5px;
-}
-
-
-
-#menu ul li a {
-  padding: 5px 10px;
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-}
-
-
-.paga {
-  background-color: #ff69b4;
-  position: absolute;
-  left: 96.5%;
-  top: 245px;
-  color: #fff;
-  border: none;
-  padding: 10px 12px;
-  border-radius: 5px;
-}
-
-.top-info-bar {
-  display: block;
-  width: 100%;
-  z-index: 100;
-  background-color: #ec5598;
-  height: 45px;
-}
-
-header {
-  background: #ec5598;
-  color: wheat;
-  font-size: 24px;
-  padding: 20px, 0;
-
+// Defini um mixin para centralizar os elementos
+@mixin centralizar {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
+// Defini um estilo global para o body
+body {
+  font-family: Arial, sans-serif;
+  background-color: $cor-secundaria;
+}
+
+// Defini um estilo para o cabeçalho
+header {
+  // Usei o mixin de centralizar
+  @include centralizar;
+  // Defini uma altura fixa
+  height: 80px;
+  // Defini uma cor de fundo
+  background-color: $cor-primaria;
+  // Defini uma margem inferior
+  margin-bottom: 20px;
+
+  // Aninhei os estilos dos elementos filhos do cabeçalho
+  h1 {
+    // Defini uma cor de texto
+    color: $cor-secundaria;
+    // Defini uma margem direita
+    margin-right: 20px;
+  }
+
+  nav {
+    ul {
+      // Anulei o estilo padrão da lista
+      list-style: none;
+      // Anulei as margens e os paddings padrões
+      margin: 0;
+      padding: 0;
+
+      li {
+        // Defini um estilo de display inline-block para os itens da lista
+        display: inline-block;
+        // Defini uma margem esquerda
+        margin-left: 10px;
+
+        a {
+          // Defini uma cor de texto
+          color: $cor-secundaria;
+          // Defini um estilo de texto sem decoração
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// Defini um estilo para o conteúdo principal
 main {
-  background: white;
-  padding: 30px;
+  // Usei o mixin de centralizar
+  @include centralizar;
+  // Defini uma largura máxima
+  max-width: 800px;
 
+  .page-title {
+    h2 {
+      // Defini uma cor de texto
+      color: $cor-terciaria;
+      // Defini um alinhamento de texto centralizado
+      text-align: center;
+    }
 
-  .page-ttle {
-    font-size: 40px;
-    padding: 50px 0;
-    text-align: center;
-  }
+    section {
+      table {
+        // Defini uma largura de 100%
+        width: 100%;
+        // Defini uma borda colapsada
+        border-collapse: collapse;
 
-  .content {
-    display: flex;
-  
+        th, td {
+          // Defini uma borda sólida para as células da tabela
+          border: 1px solid $cor-terciaria;
+          // Defini um padding para as células da tabela
+          padding: 10px;
+        }
 
-  section {
-    flex: 1;
-  }
+        th {
+          // Defini uma cor de fundo para o cabeçalho da tabela
+          background-color: $cor-primaria;
+          // Defini uma cor de texto para o cabeçalho da tabela
+          color: $cor-secundaria;
+        }
 
-  aside {
-background: #ec5598;
-min-width: 250px;
+        td {
+          // Defini um alinhamento de texto centralizado para as células da tabela
+          text-align: center;
+        }
+
+        button {
+          // Defini uma cor de fundo para o botão de remover
+          background-color: $cor-primaria;
+          // Defini uma cor de texto para o botão de remover
+          color: $cor-secundaria;
+          // Defini um estilo de borda sem borda
+          border: none;
+          // Defini um padding para o botão de remover
+          padding: 5px 10px;
+          // Defini um cursor do tipo ponteiro para o botão de remover
+          cursor: pointer;
+        }
+      }
+    }
+
+    aside {
+      // Defini uma margem superior
+      margin-top: 20px;
+
+      h3 {
+        // Defini uma cor de texto
+        color: $cor-terciaria;
+        // Defini um alinhamento de texto centralizado
+        text-align: center;
+      }
+
+      ul {
+        // Anulei o estilo padrão da lista
+        list-style: none;
+        // Anulei as margens e os paddings padrões
+        margin: 0;
+        padding: 0;
+
+        li {
+          // Defini uma cor de texto
+          color: $cor-terciaria;
+          // Defini um alinhamento de texto à direita
+          text-align: right;
+        }
+      }
+
+      button {
+        // Defini uma cor de fundo para o botão de finalizar compra
+        background-color: $cor-primaria;
+        // Defini uma cor de texto para o botão de finalizar compra
+        color: $cor-secundaria;
+        // Defini um estilo de borda sem borda
+        border: none;
+        // Defini um padding para o botão de finalizar compra
+        padding: 10px 20px;
+        // Defini um cursor do tipo ponteiro para o botão de finalizar compra
+        cursor: pointer;
+        // Defini um display em bloco para o botão de finalizar compra
+        display: block;
+        // Defini uma margem automática para o botão de finalizar compra
+        margin: auto;
+      }
+    }
   }
 }
-}
+
+// Defini um estilo para o seletor de quantidade 
+#quantidade {
+  /* Defini uma largura fixa */}
