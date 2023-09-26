@@ -1,6 +1,7 @@
 {
     "liveServer.settings.CustomBrowser": "microsoft-edge",
     "liveSassCompile.settings.showOutputWindowOn": "Error",
+    "liveServer.settings.multiRootWorkspaceName": "confeitaria",
    
 
 }
