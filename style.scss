@@ -1,167 +1,168 @@
-// Defini algumas variáveis para as cores
-$cor-primaria: pink;
-$cor-secundaria: white;
-$cor-terciaria: black;
+// Defini uma variável para a cor rosa
+$rosa: #FFC0CB;
 
-// Defini um mixin para centralizar os elementos
-@mixin centralizar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// Defini um estilo global para o body
-body {
-  font-family: Arial, sans-serif;
-  background-color: $cor-secundaria;
-}
-
-// Defini um estilo para o cabeçalho
+// Usei um seletor aninhado para estilizar o cabeçalho
 header {
-  // Usei o mixin de centralizar
-  @include centralizar;
-  // Defini uma altura fixa
-  height: 80px;
-  // Defini uma cor de fundo
-  background-color: $cor-primaria;
-  // Defini uma margem inferior
-  margin-bottom: 20px;
-
-  // Aninhei os estilos dos elementos filhos do cabeçalho
+  // Apliquei uma cor de fundo rosa
+  background-color: $rosa;
+  // Apliquei uma margem de 10px
+  margin: 10px;
+  // Apliquei um padding de 20px
+  padding: 20px;
+  // Usei um seletor descendente para estilizar o título do cabeçalho
   h1 {
-    // Defini uma cor de texto
-    color: $cor-secundaria;
-    // Defini uma margem direita
-    margin-right: 20px;
+    // Apliquei uma cor de texto branca
+    color: white;
+    // Apliquei um alinhamento de texto centralizado
+    text-align: center;
   }
-
+  // Usei um seletor descendente para estilizar a navegação do cabeçalho
   nav {
+    // Apliquei um display flexível para alinhar os itens horizontalmente
+    display: flex;
+    // Apliquei um alinhamento de itens centralizado
+    align-items: center;
+    // Apliquei um justificamento de conteúdo com espaço entre os itens
+    justify-content: space-between;
+    // Usei um seletor descendente para estilizar a lista da navegação
     ul {
-      // Anulei o estilo padrão da lista
+      // Removi o estilo padrão da lista
       list-style: none;
-      // Anulei as margens e os paddings padrões
-      margin: 0;
+      // Removi o padding padrão da lista
       padding: 0;
-
+      // Usei um seletor descendente para estilizar os itens da lista
       li {
-        // Defini um estilo de display inline-block para os itens da lista
+        // Apliquei um display inline-block para colocar os itens lado a lado
         display: inline-block;
-        // Defini uma margem esquerda
-        margin-left: 10px;
-
+        // Apliquei uma margem de 10px
+        margin: 10px;
+        // Usei um seletor descendente para estilizar os links dos itens da lista
         a {
-          // Defini uma cor de texto
-          color: $cor-secundaria;
-          // Defini um estilo de texto sem decoração
+          // Apliquei uma cor de texto branca
+          color: white;
+          // Apliquei um text-decoration none para remover o sublinhado dos links
           text-decoration: none;
+          // Apliquei um padding de 5px
+          padding: 5px;
+          // Apliquei uma borda sólida branca de 2px
+          border: 2px solid white;
+          // Apliquei um border-radius de 5px para arredondar as bordas dos links
+          border-radius: 5px;
+          // Usei um seletor pseudo-classe para estilizar os links quando o mouse passar sobre eles
+          &:hover {
+            // Apliquei uma cor de fundo branca
+            background-color: white;
+            // Apliquei uma cor de texto rosa
+            color: $rosa;
+          }
         }
       }
     }
   }
 }
 
-// Defini um estilo para o conteúdo principal
+// Usei um seletor aninhado para estilizar o conteúdo principal da página
 main {
-  // Usei o mixin de centralizar
-  @include centralizar;
-  // Defini uma largura máxima
-  max-width: 800px;
-
+  // Apliquei uma margem de 10px
+  margin: 10px;
+  // Usei um seletor descendente para estilizar o título da página
   .page-title {
-    h2 {
-      // Defini uma cor de texto
-      color: $cor-terciaria;
-      // Defini um alinhamento de texto centralizado
-      text-align: center;
-    }
-
-    section {
-      table {
-        // Defini uma largura de 100%
-        width: 100%;
-        // Defini uma borda colapsada
-        border-collapse: collapse;
-
-        th, td {
-          // Defini uma borda sólida para as células da tabela
-          border: 1px solid $cor-terciaria;
-          // Defini um padding para as células da tabela
+    // Apliquei uma cor de texto rosa
+    color: $rosa;
+    // Apliquei um alinhamento de texto centralizado
+    text-align: center;
+  }
+  // Usei um seletor descendente para estilizar a seção da tabela
+  section {
+    // Apliquei uma margem de auto para centralizar a tabela horizontalmente
+    margin: auto;
+    // Apliquei uma largura máxima de 80% para a tabela não ficar muito grande
+    max-width: 80%;
+    // Usei um seletor descendente para estilizar a tabela dos produtos
+    table {
+      // Apliquei uma largura de 100% para ocupar todo o espaço disponível na seção
+      width: 100%;
+      // Apliquei um border-collapse collapse para remover o espaço entre as células da tabela
+      border-collapse: collapse;
+      // Usei um seletor descendente para estilizar o cabeçalho da tabela
+      thead {
+        // Usei um seletor descendente para estilizar as células do cabeçalho da tabela
+        th {
+          // Apliquei uma cor de fundo rosa
+          background-color: $rosa;
+          // Apliquei uma cor de texto branca
+          color: white;
+          // Apliquei um padding de 10px
           padding: 10px;
         }
-
-        th {
-          // Defini uma cor de fundo para o cabeçalho da tabela
-          background-color: $cor-primaria;
-          // Defini uma cor de texto para o cabeçalho da tabela
-          color: $cor-secundaria;
-        }
-
-        td {
-          // Defini um alinhamento de texto centralizado para as células da tabela
-          text-align: center;
-        }
-
-        button {
-          // Defini uma cor de fundo para o botão de remover
-          background-color: $cor-primaria;
-          // Defini uma cor de texto para o botão de remover
-          color: $cor-secundaria;
-          // Defini um estilo de borda sem borda
-          border: none;
-          // Defini um padding para o botão de remover
-          padding: 5px 10px;
-          // Defini um cursor do tipo ponteiro para o botão de remover
-          cursor: pointer;
+      }
+      // Usei um seletor descendente para estilizar o corpo da tabela
+      tbody {
+        // Usei um seletor descendente para estilizar as linhas do corpo da tabela
+        tr {
+          // Usei um seletor descendente para estilizar as células do corpo da tabela
+          td {
+            // Apliquei um padding de 10px
+            padding: 10px;
+            // Apliquei uma borda sólida cinza de 1px
+            border: 1px solid gray;
+            // Usei um seletor pseudo-classe para estilizar as células quando o mouse passar sobre elas
+            &:hover {
+              // Apliquei uma cor de fundo cinza claro
+              background-color: lightgray;
+            }
+          }
         }
       }
     }
-
-    aside {
-      // Defini uma margem superior
-      margin-top: 20px;
-
-      h3 {
-        // Defini uma cor de texto
-        color: $cor-terciaria;
-        // Defini um alinhamento de texto centralizado
-        text-align: center;
+  }
+  // Usei um seletor descendente para estilizar o resumo da compra
+  aside {
+    // Apliquei uma margem de auto para centralizar o resumo horizontalmente
+    margin: auto;
+    // Apliquei uma largura máxima de 80% para o resumo não ficar muito grande
+    max-width: 80%;
+    // Apliquei uma margem superior de 20px para separar o resumo da tabela
+    margin-top: 20px;
+    // Usei um seletor descendente para estilizar a lista do resumo
+    ul {
+      // Removi o estilo padrão da lista
+      list-style: none;
+      // Removi o padding padrão da lista
+      padding: 0;
+      // Usei um seletor descendente para estilizar os itens da lista
+      li {
+        // Apliquei uma cor de texto rosa
+        color: $rosa;
+        // Apliquei um font-weight bold para deixar os itens em negrito
+        font-weight: bold;
+        // Apliquei um display flexível para alinhar os itens horizontalmente
+        display: flex;
+        // Apliquei um justificamento de conteúdo com espaço entre os itens
+        justify-content: space-between;
       }
-
-      ul {
-        // Anulei o estilo padrão da lista
-        list-style: none;
-        // Anulei as margens e os paddings padrões
-        margin: 0;
-        padding: 0;
-
-        li {
-          // Defini uma cor de texto
-          color: $cor-terciaria;
-          // Defini um alinhamento de texto à direita
-          text-align: right;
-        }
-      }
-
-      button {
-        // Defini uma cor de fundo para o botão de finalizar compra
-        background-color: $cor-primaria;
-        // Defini uma cor de texto para o botão de finalizar compra
-        color: $cor-secundaria;
-        // Defini um estilo de borda sem borda
-        border: none;
-        // Defini um padding para o botão de finalizar compra
-        padding: 10px 20px;
-        // Defini um cursor do tipo ponteiro para o botão de finalizar compra
-        cursor: pointer;
-        // Defini um display em bloco para o botão de finalizar compra
-        display: block;
-        // Defini uma margem automática para o botão de finalizar compra
-        margin: auto;
+    }
+    // Usei um seletor descendente para estilizar o botão de finalizar compra
+    button {
+      // Apliquei uma cor de fundo rosa
+      background-color: $rosa;
+      // Apliquei uma cor de texto branca
+      color: white;
+      // Apliquei um padding de 10px
+      padding: 10px;
+      // Apliquei uma borda sólida branca de 2px
+      border: 2px solid white;
+      // Apliquei um border-radius de 5px para arredondar as bordas do botão
+      border-radius: 5px;
+      // Apliquei um cursor pointer para indicar que o botão é clicável
+      cursor: pointer;
+      // Usei um seletor pseudo-classe para estilizar o botão quando o mouse passar sobre ele
+      &:hover {
+        // Apliquei uma cor de fundo branca
+        background-color: white;
+        // Apliquei uma cor de texto rosa
+        color: $rosa;
       }
     }
   }
 }
-
-// Defini um estilo para o seletor de quantidade 
-#quantidade {
-  /* Defini uma largura fixa */}
