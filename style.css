@@ -1,10 +1,39 @@
+* {
+  background-color: rgb(184, 171, 171);
+}
+
+#menu {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: pink;
+}
+
+#menu li {
+  margin: 0 10px;
+  display: inline-block;
+  color: pink;
+  background-color: transparent; /* Adicione esta linha para remover a cor de fundo dos itens do menu */
+}
+
+.loja {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: pink;
+  color: white;
+  margin-right: 20px;
+}
+
 header {
   background-color: #FFC0CB;
   margin: 10px;
   padding: 20px;
 }
 header h1 {
-  color: rgb(216, 208, 208);
+  color: white;
   text-align: center;
 }
 header nav {

@@ -1,3 +1,35 @@
+
+*{
+  background-color: rgb(184, 171, 171);
+}
+$bg-color: pink;
+$margin-top: 20px;
+
+#menu {
+    margin-top: $margin-top;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $bg-color;
+}
+
+#menu li {
+  margin: 0 10px;
+  display: inline-block;
+  color: $bg-color;
+  background-color: transparent; /* Adicione esta linha para remover a cor de fundo dos itens do menu */
+}
+.loja {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: pink;
+  color: white;
+  margin-right: 20px;
+}
+
+
 // Defini uma variável para a cor rosa
 $rosa: #FFC0CB;
 
