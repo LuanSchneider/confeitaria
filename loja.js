@@ -43,29 +43,10 @@ function finalizar() {
       window.location.href = "https://www.bing.com/";
     });
 }
-
 var quantidade = document.getElementById("quantidade-select");
 
-// Select the td element that contains the total of the product
-var total = quantidade.parentElement.parentElement.lastElementChild.previousElementSibling;
 
-// Create a function to update the total of the product
-function atualizarTotal() {
-  // Get the value of the quantity
-  var qtd = parseInt(quantidade.value);
 
-  // Get the unit price of the product
-  var preco = parseInt(quantidade.parentElement.previousElementSibling.textContent.replace('R$ ', ''));
-
-  // Calculate the total of the product
-  var totalProduto = qtd * preco;
-  
-
-  // Update the cell of the total of the product
-  total.textContent = "R$ " + totalProduto;
-}
-
-var quantidade = document.getElementById("quantidade-select2");
 
 // Select the td element that contains the total of the product
 var total = quantidade.parentElement.parentElement.lastElementChild.previousElementSibling;
@@ -85,6 +66,8 @@ function atualizarTotal() {
   // Update the cell of the total of the product
   total.textContent = "R$ " + totalProduto;
 }
+
 
 // Add a change event to the quantity selector
 quantidade.addEventListener("change", atualizarTotal);
+
