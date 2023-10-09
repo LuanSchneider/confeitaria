@@ -189,7 +189,7 @@ main {
       // Apliquei um cursor pointer para indicar que o botão é clicável
       cursor: pointer;
       // Usei um seletor pseudo-classe para estilizar o botão quando o mouse passar sobre ele
-      &:hover {
+      :hover {
         // Apliquei uma cor de fundo branca
         background-color: white;
         // Apliquei uma cor de texto rosa
