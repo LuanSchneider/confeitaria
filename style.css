@@ -113,3 +113,41 @@ left: 35%;
   bottom: 55%;
   left: 55%;
 }
+
+/* Estilo básico para os botões */
+button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilo para o botão 'Salvar' */
+button#salvar {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+}
+
+/* Estilo para o botão 'Remover' */
+button#remover {
+  background-color: #f44336; /* Vermelho */
+  color: white;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"] {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para o seletor de quantidade */
+select#quantidade-select {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
